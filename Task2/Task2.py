@@ -1,21 +1,24 @@
 # İBRAHİM ERKAN 02195076044
 
-# Ters Çevirme
+# Görüntü işleme ödev 2
+# Tersleme
 
 import cv2
 import numpy as np
 
-image=cv2.imread("images.jpg",0)
-cv2.imshow("orjinal fotograf",image)
-cv2.waitKey()
 
-max_photo=np.max(image)
+y_boyut=500
+x_boyut=500
+foto = cv2.resize(cv2.imread("kkk.jpg",0),(x_boyut,y_boyut))
 
-[h,w]=np.shape(image)
+# cv2.imshow("foto",foto)
+# cv2.waitKey()
 
-for i in range (0,h):
-    for j in range (0,w):
-        image[i,j]=max_photo-image[i,j]
+ters_foto = np.zeros([x_boyut,y_boyut],dtype=np.uint8)
 
-cv2.imshow("ters fotograf",image)
+for i in range (x_boyut):
+    for k in range (y_boyut):
+        ters_foto[i,k] = 255 - foto[i,k]
+
+cv2.imshow("foto",ters_foto)
 cv2.waitKey()
