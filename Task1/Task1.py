@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # İBRAHİM ERKAN 02195076044
 
 # Read the image.
-img = cv2.imbread("banana.jpg", 0)
+img = cv2.imread("banana.jpg", 0)
 
 cv2.imshow("not inverter", img)
 x = img.shape[0]
